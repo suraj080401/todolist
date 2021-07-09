@@ -125,7 +125,10 @@ app.post("/work",function(req,res){
   workItems.push(item);
   res.redirect("/work");
 });
-app.listen(3000,function()
+
+let port = process.env.PORT;
+if(port == NULL || port == "")
 {
-  console.log("Started");
-});
+  port = 3000;
+}
+app.listen(port);
